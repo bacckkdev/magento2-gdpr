@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Redepy_GDPR::js/cookieconsent.js"/>
+    </head>
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="Redepy\GDPR\Block\Cookie" name="cookies.gdpr" template="Redepy_GDPR::cookies.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="cookies.gdpr">
+            <block class="Redepy\GDPR\Block\Cookie" name="cookies.modal.form" template="Redepy_GDPR::cookie-form.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

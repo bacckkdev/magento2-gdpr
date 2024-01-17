@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Redepy\GDPR\Api\Data\CookieInterface"
+                type="Redepy\GDPR\Model\Cookie"/>
+    <preference for="Redepy\GDPR\Api\Data\CookieGroupsInterface"
+                type="Redepy\GDPR\Model\CookieGroup"/>
+    <preference for="Redepy\GDPR\Api\CookieRepositoryInterface"
+                type="Redepy\GDPR\Model\Repository\CookieRepository"/>
+    <preference for="Redepy\GDPR\Api\CookieManagementInterface"
+                type="Redepy\GDPR\Model\Cookie\CookieManagement"/>
+    <preference for="Redepy\GDPR\Model\Cookie\CookieManagement"
+                type="Redepy\GDPR\Model\Cookie\CookieBackend"/>
+    <preference for="Redepy\GDPR\Api\CookieGroupsRepositoryInterface"
+                type="Redepy\GDPR\Model\Repository\CookieGroupsRepository"/>
+    <type name="Redepy\GDPR\Model\ResourceModel\Cookie\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">redepy_gdprcookie</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Redepy\GDPR\Model\ResourceModel\Cookie
+            </argument>
+        </arguments>
+    </type>
+    <type name="Redepy\GDPR\Model\ResourceModel\CookieGroup\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">redepy_gdprcookie_group</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Redepy\GDPR\Model\ResourceModel\CookieGroup
+            </argument>
+        </arguments>
+    </type>
+</config>

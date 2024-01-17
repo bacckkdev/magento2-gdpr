@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Redepy_GDPR::js/mColorPicker.js"/>
+        <css src="Redepy_GDPR::css/style.css"/>
+    </head>
+    <body>
+        <referenceContainer name="header">
+            <block class="Magento\Backend\Block\Template" template="Redepy_GDPR::system/config/js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

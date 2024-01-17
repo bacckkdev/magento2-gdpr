@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="redepy_gdprcookie" resource="default" engine="innodb"
+           comment="Redepy GDPR Cookie">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="text" name="name" nullable="false" comment="Cookie Name"/>
+        <column xsi:type="text" name="description" nullable="false" comment="Cookie Description"/>
+        <column xsi:type="int" name="group_id" nullable="false" comment="Cookie Group"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+    <table name="redepy_gdprcookie_group" resource="default" engine="innodb"
+           comment="Redepy GDPR Cookie Table with created cookie groups">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="text" name="name" nullable="false" comment="Cookie Name"/>
+        <column xsi:type="text" name="description" nullable="false" comment="Cookie Description"/>
+        <column xsi:type="boolean" name="is_enabled" comment="Is Group Enabled"/>
+        <column xsi:type="boolean" name="is_essential" comment="Is Group Essential"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

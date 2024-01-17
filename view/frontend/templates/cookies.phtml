@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var \Redepy\GDPR\Block\Cookie $block
+ */
+?>
+
+<?php if ($this->enabled()): ?>
+    <script type="text/x-magento-init">
+{
+    "*": {
+        "Redepy_GDPR/js/cookiebanner": <?php echo $this->getJsConfig($block->getChildHtml('cookies.modal.form')); ?>
+    }
+}
+    </script>
+<?php endif; ?>

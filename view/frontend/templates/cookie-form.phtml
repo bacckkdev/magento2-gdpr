@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \Redepy\GDPR\Block\Cookie $block
+ */
+$groupData = $block->getGroupData();
+?>
+
+<div class='cc-head'><?= $block->getConfigValue('headline') ?></div>
+<div class='cc-body'><?= $block->getConfigValue('message') ?></div>
+<div class='cc-details-show show'>
+    <div class='cc-text'><?= __('Show details') ?></div>
+    <div class='cc-icon'></div>
+</div>
+
+<?php foreach ($groupData as $group): ?>
+    <div>
+        <input id="<?= strtolower($group['name']) ?>" name='coockie' type='checkbox'
+               value="<?= strtolower($group['name']) ?>"/>
+        <label for="<?= strtolower($group['name']) ?>"><?= $group['name'] ?></label>
+    </div>
+<?php endforeach; ?>
+
+<div class='cc-details hidden'>
+    <div class='cc-head'><?= $block->getConfigValue('additional_title') ?></div>
+    <div class='cc-body'><?= $block->getConfigValue('additional_text') ?></div>
+    <div class='cc-head'><?= $block->getConfigValue('additional_title_second') ?></div>
+    <div class='cc-body'><?= $block->getConfigValue('additional_text_second') ?></div>
+    <div class='cc-head'><?= $block->getConfigValue('additional_title_third') ?></div>
+    <div class='cc-body'><?= $block->getConfigValue('additional_text_third') ?></div>
+    <div class='cc-head'><?= $block->getConfigValue('additional_title_fourth') ?></div>
+    <div class='cc-body'><?= $block->getConfigValue('additional_text_fourth') ?></div>
+</div>
